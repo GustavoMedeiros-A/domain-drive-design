@@ -6,10 +6,23 @@ export default class Customer {
   _address!: Address; // "The _address! -> ! means that can inicialize empty (blank)"
   _active: boolean = false;
 
-  constructor(id: string, name: string, address: string) {
+  constructor(id: string, name: string) {
     this._id = id;
     this._name = name;
     this.validate(); // A entidade se AUTO valida
+  }
+
+  get name(): string {
+    return this._name;
+  }
+
+  get isActive(): boolean {
+    return this._active;
+  }
+
+  set Address(address: Address) {
+    this._address = address;
+    this.validate();
   }
 
   validate() {
@@ -28,8 +41,8 @@ export default class Customer {
   }
 
   activate() {
-    if (this._name.length === 0) {
-      throw new Error("Name is mandaroty to activate a customer");
+    if (this._address === undefined) {
+      throw new Error("Address is mandatory to activate a customer");
     }
     this._active = true;
   }
@@ -38,8 +51,4 @@ export default class Customer {
     this._active = false;
   }
 
-  set Address(address: Address) {
-    this._address = address;
-    this.validate();
-  }
 }
