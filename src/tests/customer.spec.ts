@@ -1,11 +1,12 @@
-import { Address } from "../entity/address";
-import Customer from "../entity/customer";
+import { Address } from "../domain/entity/address";
+import Customer from "../domain/entity/customer";
+
 
 describe("Customer unit tests", () => {
     const customer = new Customer("123", "Gustavo");
     
     it("should create a new customer", () => {
-        expect(customer._id).toBe("123");
+        expect(customer.id).toBe("123");
         expect(customer.name).toBe("Gustavo");
         expect(customer.isActive).toBe(false);
     });

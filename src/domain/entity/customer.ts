@@ -1,15 +1,21 @@
 import { Address } from "./address";
 
 export default class Customer {
-  _id: string;
-  _name: string;
-  _address!: Address; // "The _address! -> ! means that can inicialize empty (blank)"
-  _active: boolean = false;
+  
+  private _id: string;
+  private _name: string;
+  private _address!: Address; // "The _address! -> ! means that can inicialize empty (blank)"
+  private _active: boolean = false;
+  private _rewardPoints: number = 0;
 
   constructor(id: string, name: string) {
     this._id = id;
     this._name = name;
     this.validate(); // A entidade se AUTO valida
+  }
+
+  get id(): string {
+    return this._id;
   }
 
   get name(): string {
@@ -20,9 +26,17 @@ export default class Customer {
     return this._active;
   }
 
+  get rewardPoints(): number {
+    return this._rewardPoints;
+  }
+
   set Address(address: Address) {
     this._address = address;
     this.validate();
+  }
+
+  addRewardPoints(points: number) {
+    this._rewardPoints += points;
   }
 
   validate() {

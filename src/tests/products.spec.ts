@@ -1,4 +1,4 @@
-import { Product } from "../entity/products"
+import { Product } from "../domain/entity/products"
 
 describe('product unit test', () => {
 
