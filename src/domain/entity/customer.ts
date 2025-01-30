@@ -22,8 +22,8 @@ export default class Customer {
     return this._name;
   }
 
-  get isActive(): boolean {
-    return this._active;
+  get Address(): Address {
+    return this._address;
   }
 
   get rewardPoints(): number {
@@ -39,6 +39,10 @@ export default class Customer {
     this._rewardPoints += points;
   }
 
+  isActive(): boolean {
+    return this._active;
+  }
+
   validate() {
     if (this._id.length == 0) {
       throw new Error("ID cannot be null");
@@ -52,6 +56,10 @@ export default class Customer {
   changeName(name: string): void {
     this._name = name;
     this.validate(); // A entidade se AUTO validando
+  }
+
+  changeAddress(address: Address) {
+    this._address = address;
   }
 
   activate() {
