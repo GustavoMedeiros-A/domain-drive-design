@@ -13,6 +13,14 @@ export default class OrderItem {
     this._quantity = quantity;
   }
 
+  get id() { return this._id; }
+
+  get name() { return this._name; }
+
+  get price() { return this._price; }
+
+  get productId(): string { return this._productId; }
+
   get quantity(): number { return this._quantity; }
 
   validate(): boolean { 

@@ -7,7 +7,6 @@ import ProductModel from "./product.model";
 
 describe("product repository test", () => {
     let sequelize: Sequelize;
-    let productRepository: ProductRepositoryInterface;
     
     beforeEach(async () => {
         sequelize = new Sequelize({
