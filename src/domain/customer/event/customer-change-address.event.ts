@@ -1,5 +1,6 @@
-import Customer from "../../entity/customer";
-import EventInterface from "../@shared/event.interface";
+import Customer from "../../customer/entity/customer";
+import EventInterface from "../../@shared/event/event.interface";
+
 
 
 export default class CustomerChangeAddress implements EventInterface {

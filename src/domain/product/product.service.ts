@@ -1,4 +1,4 @@
-import { Product } from "../entity/products";
+import { Product } from "../product/entity/products";
 
 
 
