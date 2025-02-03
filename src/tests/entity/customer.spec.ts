@@ -8,13 +8,13 @@ describe("Customer unit tests", () => {
     it("should create a new customer", () => {
         expect(customer.id).toBe("123");
         expect(customer.name).toBe("Gustavo");
-        expect(customer.isActive).toBe(false);
+        expect(customer.isActive()).toBe(false);
     });
 
     it("should activate a customer", () => {
         customer.Address = new Address("Rua 1", 2, "12342-321", "Juiz de Fora");
         customer.activate();
-        expect(customer.isActive).toBe(true);
+        expect(customer.isActive()).toBe(true);
     });
 
     it("should throw an error when address is undefined", () => {
@@ -28,7 +28,7 @@ describe("Customer unit tests", () => {
 
     it("should deactivate a customer", () => {
         customer.deactivate();
-        expect(customer.isActive).toBe(false);
+        expect(customer.isActive()).toBe(false);
     })
 
     it("should throw an error when creating a customer with an empty ID", () => {
