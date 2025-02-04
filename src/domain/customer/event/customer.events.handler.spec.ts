@@ -1,5 +1,5 @@
 import EventDispatcher from "../../@shared/event/event-dispatcher";
-import { Address } from "../../customer/entity/address";
+import { Address } from "../value-object/address";
 import Customer from "../../customer/entity/customer";
 import CustomerChangeAddress from "./customer-change-address.event";
 import CustomerCreatedEvent from "./customer-created.event";
